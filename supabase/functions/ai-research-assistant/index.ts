@@ -27,6 +27,15 @@ serve(async (req) => {
       prompt = `Research relevant information for this objective: "${objectiveTitle}" ${objectiveDescription ? `with description: "${objectiveDescription}"` : ''}. 
       Provide 3-5 key facts or insights that would be helpful for achieving this objective.
       Format as brief, informative bullet points.`;
+    } else if (requestType === 'feasibility') {
+      prompt = `Analyze the feasibility of this research project: "${objectiveTitle}" ${objectiveDescription ? `with description: "${objectiveDescription}"` : ''}. 
+      Consider time, resources, and potential impact. Provide an assessment on a scale of 1-10, followed by 2-3 bullet points explaining your reasoning.`;
+    } else if (requestType === 'timeline') {
+      prompt = `Create a suggested timeline for the research project: "${objectiveTitle}" ${objectiveDescription ? `with description: "${objectiveDescription}"` : ''}. 
+      Break down the project into 3-4 phases with approximate time estimates for each phase.`;
+    } else if (requestType === 'resources') {
+      prompt = `Recommend resources needed for this research project: "${objectiveTitle}" ${objectiveDescription ? `with description: "${objectiveDescription}"` : ''}. 
+      List 3-4 key resources (human expertise, tools, technologies, datasets) that would be essential for success.`;
     }
 
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
