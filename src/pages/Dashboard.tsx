@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -8,21 +7,10 @@ import { BarChart3, ChevronRight, Clock, Layers, Plus, Target, TrendingUp } from
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/components/ui/use-toast";
+import type { Database } from "@/integrations/supabase/types";
 
-interface Objective {
-  id: string;
-  title: string;
-  progress: number;
-  due_date: string | null;
-  priority: string | null;
-}
-
-interface Project {
-  id: string;
-  title: string;
-  phase: string | null;
-  progress: number;
-}
+type Objective = Database['public']['Tables']['objectives']['Row'];
+type Project = Database['public']['Tables']['projects']['Row'];
 
 export default function Dashboard() {
   const navigate = useNavigate();
