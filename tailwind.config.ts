@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,46 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				nexus: {
+					50: '#edf3ff',
+					100: '#dee8ff',
+					200: '#c4d4ff',
+					300: '#9db7ff',
+					400: '#758fff',
+					500: '#4f65f8',
+					600: '#3a41ed',
+					700: '#3132d1',
+					800: '#2c2da8',
+					900: '#282c82',
+					950: '#1E3A8A',
+				},
+				teal: {
+					50: '#effefb',
+					100: '#c7fbf1',
+					200: '#90f5e5',
+					300: '#62e9d9',
+					400: '#31d2c2',
+					500: '#17b3a7',
+					600: '#0D9488',
+					700: '#0c6c66',
+					800: '#0d5651',
+					900: '#0f4744',
+					950: '#02302d',
+				},
+				orange: {
+					50: '#fff7ed',
+					100: '#ffedd5',
+					200: '#fed7aa',
+					300: '#fdba74',
+					400: '#fb923c',
+					500: '#F97316',
+					600: '#ea580c',
+					700: '#c2410c',
+					800: '#9a3412',
+					900: '#7c2d12',
+					950: '#431407',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +124,32 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					from: {
+						opacity: '0'
+					},
+					to: {
+						opacity: '1'
+					}
+				},
+				'fade-out': {
+					from: {
+						opacity: '1'
+					},
+					to: {
+						opacity: '0'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.3s ease-out',
+				'fade-out': 'fade-out 0.3s ease-out'
+			},
+			fontFamily: {
+				sans: ['Inter var', 'sans-serif'],
 			}
 		}
 	},
